@@ -16,3 +16,8 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->get('/clients', 'ClientController@index');
+$router->get('/client/{id}', 'ClientController@show');
+$router->get('/client/{id}/contracts', 'ContractController@ContractsByClient');
+
