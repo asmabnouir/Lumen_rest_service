@@ -8,6 +8,6 @@ class Contract extends Model
 {
     public function Client()
     {
-        return $this->belongsTo('App\Models\Client', 'contract_id');
+        return $this->belongsTo('App\Models\Client', 'client_id');
     }
 }

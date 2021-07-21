@@ -15,11 +15,17 @@ class CreateContractsTable extends Migration
     {
         Schema::create('contracts', function (Blueprint $table) {
             $table->id();
+            $table->unsignedInteger('client_id');
             $table->string('energy');
             $table->string('product');
             $table->string('gsrn');
             $table->integer('duration');
             $table->string('codePromo');
+            $table->foreign('client_id')
+            ->reference('id')
+            ->on('clients')
+            ->onDelete('cascade');
+
             $table->timestamps();
         });
     }

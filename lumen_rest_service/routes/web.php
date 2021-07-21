@@ -19,5 +19,8 @@ $router->get('/', function () use ($router) {
 
 $router->get('/clients', 'ClientController@index');
 $router->get('/client/{id}', 'ClientController@show');
+$router->get('/contracts', 'ContractController@index');
 $router->get('/client/{id}/contracts', 'ContractController@ContractsByClient');
+$router->get('/client/{id}/contracts/{id2}', 'ContractController@showContractByClient');
+$router->put('/update', 'ContractController@update');
 
