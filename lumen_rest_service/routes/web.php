@@ -21,6 +21,6 @@ $router->get('/clients', 'ClientController@index');
 $router->get('/client/{id}', 'ClientController@show');
 $router->get('/contracts', 'ContractController@index');
 $router->get('/client/{id}/contracts', 'ContractController@ContractsByClient');
-$router->get('/client/{id}/contracts/{id2}', 'ContractController@showContractByClient');
+$router->get('/contract/{id}', 'ContractController@showContractById');
 $router->put('/update', 'ContractController@update');
 

@@ -20,15 +20,13 @@ class ContractController extends Controller
       return $contracts;
 
    }
-   public function showContractByClient($id, $id2){
-      $contracts = Client::find($id)->contracts;
-      $contract = $contracts->find($id2);
-      return $contract;
+   public function showContractById($id){
+      return Contract::find($id);
    }
    // Update a contract by id 
    // edit contract
    public function update(Request $request){
-      $contract = $request->isMethod('put')? Contract::FindOrFail($request->id):new Contract;
+      $contract = Contract::FindOrFail($request->id);
       $contract->id = $request->input('id');
       $contract->energy=$request->input('energy');
       $contract->product=$request->input('product');
